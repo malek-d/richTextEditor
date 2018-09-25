@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 namespace Assignment2
 {
     public enum Type { View, Edit }
+
+
     public class User
     {
         public String Username { get; set; }
-        public String Password { get; set; }
+        private String Password { get; set; }
         public Type User_Type { get; set; }
         private String First_Name { get; set; }
         private String Last_Name { get; set; }
@@ -24,16 +26,6 @@ namespace Assignment2
             First_Name = "";
             Last_Name = "";
             Dob = DateTime.Now;
-        }
-
-        public User(String username, String password, Type Type, String First, String Last, DateTime dob)
-        {
-            Username = username;
-            Password = password;
-            User_Type = Type;
-            First_Name = First;
-            Last_Name = Last;
-            Dob = dob;
         }
 
         public User(String username, String password, String Type, String First, String Last, String dob)

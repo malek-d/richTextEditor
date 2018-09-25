@@ -16,17 +16,14 @@ namespace Assignment2
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            this.Text = "Login";
         }
 
         private void signupBtn_Click(object sender, EventArgs e)
         {
             Signup signup = new Signup();
             this.Hide();
+            signup.Text = "Register";
             signup.ShowDialog();
 
             this.Show();
@@ -43,7 +40,7 @@ namespace Assignment2
             
             StreamReader reader = File.OpenText("..\\..\\login.txt");
             string line;
-
+            Boolean didLogin = false;
             while ((line = reader.ReadLine())!= null)
             {
                 string[] items = line.Split(',');
@@ -51,23 +48,22 @@ namespace Assignment2
                 if(items[0].Equals(usernameTB.Text) && items[1].Equals(passwordTB.Text))
                 {
                     User loginUser = new User(items[0], items[1], items[2], items[3], items[4], items[5]);
-                    //isSuccessLbl.Text = "It works";
-                    //Open Text editor now
-                    textEditor textEditor = new textEditor(loginUser);
-                    //textEditor.User = loginUser;
+                    TextEditor textEditor = new TextEditor(loginUser);
+
+                    didLogin = true;
+
                     this.Hide();
-                    textEditor.Show();
-                    
+                    textEditor.Text = "ProEdit Text Editor Window";
+                    textEditor.ShowDialog();
+                    this.Show();                    
                 }
             }
-            isSuccessLbl.Text = "User not found, please try again";
-            isSuccessLbl.ForeColor = System.Drawing.Color.Red;
-            isSuccessLbl.Font = new Font("Arial", 12, FontStyle.Regular);
-        }
-
-        private void isSuccessLbl_Click(object sender, EventArgs e)
-        {
-
+            if (!didLogin)
+            {
+                isSuccessLbl.Text = "User not found, please try again";
+                isSuccessLbl.ForeColor = System.Drawing.Color.Red;
+                isSuccessLbl.Font = new Font("Arial", 12, FontStyle.Regular);
+            }
         }
     }
 }

@@ -11,22 +11,31 @@ using System.Windows.Forms;
 
 namespace Assignment2
 {
-    public partial class textEditor : Form
+    public partial class TextEditor : Form
     {
         public User User = new User();
-        public textEditor(User user)
+        public TextEditor(User user)
         {
             InitializeComponent();
             User = user;
             userNameLabel.Text += User.Username;
             fontComboBox.SelectedIndex = 2;
             fontComboBox.SelectionLength = 0;
-            richTextBox1.HideSelection = false;
-
             
+            if(User.User_Type == Type.View)
+            {
+                richTextBox1.ReadOnly = true;
+                richTextBox1.BackColor = System.Drawing.Color.LightGray;
+                richTextBox1.Enabled = false;
+            }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            openFile();
+        }
+
+        private void openFile()
         {
             OpenFileDialog opentext = new OpenFileDialog();
             if (opentext.ShowDialog() == DialogResult.OK)
@@ -40,6 +49,22 @@ namespace Assignment2
             saveFile();
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            createFile();
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createFile();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            saveFile();
+        }
+
+
         private void saveFile()
         {
             SaveFileDialog saveFile1 = new SaveFileDialog();
@@ -52,14 +77,8 @@ namespace Assignment2
             if (saveFile1.ShowDialog() == System.Windows.Forms.DialogResult.OK &&
                saveFile1.FileName.Length > 0)
             {
-                // Save the contents of the RichTextBox into the file.
                 richTextBox1.SaveFile(saveFile1.FileName, RichTextBoxStreamType.PlainText);
             }
-        }
-
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            saveFile();
         }
 
         private void createFile()
@@ -82,75 +101,32 @@ namespace Assignment2
 
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void showAboutMessage()
         {
-            createFile();
-        }
-
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            createFile();
+            MessageBox.Show("Application name: ProEdit\n" +
+                            "Version: 1.00\n" +
+                            "Created by: Malek Darwiche (12580357)\n" +
+                            "Email: 12580357@student.uts.edu.au");
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            int selstart = richTextBox1.SelectionStart;
-            int sellength = richTextBox1.SelectionLength;
-
-            // Set font of selected text
-            // You can use FontStyle.Bold | FontStyle.Italic to apply more than one style
             richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold);
-
-            // Set cursor after selected text
-            richTextBox1.SelectionStart = richTextBox1.SelectionStart + richTextBox1.SelectionLength;
-            richTextBox1.SelectionLength = 0;
-            // Set font immediately after selection
-            richTextBox1.SelectionFont = richTextBox1.Font;
-
-            // Reselect previous text
-            richTextBox1.Select(selstart, sellength);
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            int selstart = richTextBox1.SelectionStart;
-            int sellength = richTextBox1.SelectionLength;
-            // Set font of selected text
-            // You can use FontStyle.Bold | FontStyle.Italic to apply more than one style
             richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic);
-
-            // Set cursor after selected text
-            richTextBox1.SelectionStart = richTextBox1.SelectionStart + richTextBox1.SelectionLength;
-            richTextBox1.SelectionLength = 0;
-            // Set font immediately after selection
-            richTextBox1.SelectionFont = richTextBox1.Font;
-
-            // Reselect previous text
-            richTextBox1.Select(selstart, sellength);
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
-            int selstart = richTextBox1.SelectionStart;
-            int sellength = richTextBox1.SelectionLength;
-            // Set font of selected text
-            // You can use FontStyle.Bold | FontStyle.Italic to apply more than one style
             richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
-
-            // Set cursor after selected text
-            richTextBox1.SelectionStart = richTextBox1.SelectionStart + richTextBox1.SelectionLength;
-            richTextBox1.SelectionLength = 0;
-            // Set font immediately after selection
-            richTextBox1.SelectionFont = richTextBox1.Font;
-
-            // Reselect previous text
-            richTextBox1.Select(selstart, sellength);
         }
 
         private void fontComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int size;
-            Int32.TryParse(fontComboBox.SelectedItem.ToString(), out size);
+            Int32.TryParse(fontComboBox.SelectedItem.ToString(), out int size);
             richTextBox1.SelectionFont = new Font("Microsoft Sans Serif", size);
         }
 
@@ -167,6 +143,51 @@ namespace Assignment2
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
             richTextBox1.Paste();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFile();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFile();
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFile();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Abort;
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Cut();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Copy();
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Paste();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showAboutMessage();
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            showAboutMessage();
         }
     }
 }

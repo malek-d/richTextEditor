@@ -58,8 +58,8 @@
             this.groupBox1.Controls.Add(this.passwordTB);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.usernameTB);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(55, 107);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(55, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(283, 239);
             this.groupBox1.TabIndex = 1;
@@ -114,18 +114,18 @@
             // signupBtn
             // 
             this.signupBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupBtn.Location = new System.Drawing.Point(55, 393);
+            this.signupBtn.Location = new System.Drawing.Point(55, 348);
             this.signupBtn.Name = "signupBtn";
             this.signupBtn.Size = new System.Drawing.Size(122, 54);
             this.signupBtn.TabIndex = 2;
-            this.signupBtn.Text = "Sign Up";
+            this.signupBtn.Text = "New User";
             this.signupBtn.UseVisualStyleBackColor = true;
             this.signupBtn.Click += new System.EventHandler(this.signupBtn_Click);
             // 
             // exitBtn
             // 
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(216, 393);
+            this.exitBtn.Location = new System.Drawing.Point(216, 348);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(122, 54);
             this.exitBtn.TabIndex = 3;
@@ -140,13 +140,12 @@
             this.isSuccessLbl.Size = new System.Drawing.Size(283, 23);
             this.isSuccessLbl.TabIndex = 4;
             this.isSuccessLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.isSuccessLbl.Click += new System.EventHandler(this.isSuccessLbl_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 493);
+            this.ClientSize = new System.Drawing.Size(389, 428);
             this.Controls.Add(this.isSuccessLbl);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.signupBtn);
@@ -154,7 +153,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

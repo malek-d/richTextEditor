@@ -58,7 +58,7 @@
             // exitBtn
             // 
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(224, 522);
+            this.exitBtn.Location = new System.Drawing.Point(224, 542);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(122, 54);
             this.exitBtn.TabIndex = 7;
@@ -69,7 +69,7 @@
             // signupBtn
             // 
             this.signupBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupBtn.Location = new System.Drawing.Point(63, 522);
+            this.signupBtn.Location = new System.Drawing.Point(63, 542);
             this.signupBtn.Name = "signupBtn";
             this.signupBtn.Size = new System.Drawing.Size(122, 54);
             this.signupBtn.TabIndex = 6;
@@ -93,10 +93,10 @@
             this.groupBox1.Controls.Add(this.passwordTB);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.usernameTB);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(63, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(283, 437);
+            this.groupBox1.Size = new System.Drawing.Size(283, 448);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sign Up";
@@ -109,7 +109,7 @@
             this.userTypeCb.Items.AddRange(new object[] {
             "View",
             "Edit"});
-            this.userTypeCb.Location = new System.Drawing.Point(103, 392);
+            this.userTypeCb.Location = new System.Drawing.Point(104, 408);
             this.userTypeCb.Name = "userTypeCb";
             this.userTypeCb.Size = new System.Drawing.Size(172, 24);
             this.userTypeCb.TabIndex = 13;
@@ -117,7 +117,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 395);
+            this.label8.Location = new System.Drawing.Point(7, 408);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 20);
             this.label8.TabIndex = 12;
@@ -126,11 +126,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 352);
+            this.label7.Location = new System.Drawing.Point(6, 341);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 20);
+            this.label7.Size = new System.Drawing.Size(110, 20);
             this.label7.TabIndex = 11;
-            this.label7.Text = "DOB";
+            this.label7.Text = "Date of birth";
             // 
             // dobDPT
             // 
@@ -138,10 +138,10 @@
             this.dobDPT.CustomFormat = "dd - MMMM - yyyy";
             this.dobDPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dobDPT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dobDPT.Location = new System.Drawing.Point(61, 347);
+            this.dobDPT.Location = new System.Drawing.Point(8, 364);
             this.dobDPT.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.dobDPT.Name = "dobDPT";
-            this.dobDPT.Size = new System.Drawing.Size(215, 26);
+            this.dobDPT.Size = new System.Drawing.Size(268, 26);
             this.dobDPT.TabIndex = 10;
             this.dobDPT.Value = new System.DateTime(2018, 9, 25, 10, 22, 28, 0);
             // 
@@ -173,7 +173,7 @@
             // 
             // firstNameTb
             // 
-            this.firstNameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstNameTb.Location = new System.Drawing.Point(6, 243);
             this.firstNameTb.Name = "firstNameTb";
             this.firstNameTb.Size = new System.Drawing.Size(270, 23);
@@ -246,7 +246,7 @@
             this.userNameError.AutoSize = true;
             this.userNameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameError.ForeColor = System.Drawing.Color.Red;
-            this.userNameError.Location = new System.Drawing.Point(352, 108);
+            this.userNameError.Location = new System.Drawing.Point(352, 132);
             this.userNameError.Name = "userNameError";
             this.userNameError.Size = new System.Drawing.Size(13, 20);
             this.userNameError.TabIndex = 8;
@@ -258,7 +258,7 @@
             this.passwordError.AutoSize = true;
             this.passwordError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordError.ForeColor = System.Drawing.Color.Red;
-            this.passwordError.Location = new System.Drawing.Point(352, 171);
+            this.passwordError.Location = new System.Drawing.Point(352, 195);
             this.passwordError.Name = "passwordError";
             this.passwordError.Size = new System.Drawing.Size(13, 20);
             this.passwordError.TabIndex = 9;
@@ -270,7 +270,7 @@
             this.password2Error.AutoSize = true;
             this.password2Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password2Error.ForeColor = System.Drawing.Color.Red;
-            this.password2Error.Location = new System.Drawing.Point(352, 231);
+            this.password2Error.Location = new System.Drawing.Point(352, 255);
             this.password2Error.Name = "password2Error";
             this.password2Error.Size = new System.Drawing.Size(13, 20);
             this.password2Error.TabIndex = 10;
@@ -282,7 +282,7 @@
             this.firstNameError.AutoSize = true;
             this.firstNameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstNameError.ForeColor = System.Drawing.Color.Red;
-            this.firstNameError.Location = new System.Drawing.Point(352, 288);
+            this.firstNameError.Location = new System.Drawing.Point(352, 312);
             this.firstNameError.Name = "firstNameError";
             this.firstNameError.Size = new System.Drawing.Size(13, 20);
             this.firstNameError.TabIndex = 11;
@@ -294,7 +294,7 @@
             this.lastNameError.AutoSize = true;
             this.lastNameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lastNameError.ForeColor = System.Drawing.Color.Red;
-            this.lastNameError.Location = new System.Drawing.Point(352, 346);
+            this.lastNameError.Location = new System.Drawing.Point(352, 370);
             this.lastNameError.Name = "lastNameError";
             this.lastNameError.Size = new System.Drawing.Size(13, 20);
             this.lastNameError.TabIndex = 12;
@@ -313,7 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 588);
+            this.ClientSize = new System.Drawing.Size(407, 613);
             this.Controls.Add(this.isSuccessLbl);
             this.Controls.Add(this.lastNameError);
             this.Controls.Add(this.firstNameError);
