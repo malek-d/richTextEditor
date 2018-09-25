@@ -77,7 +77,6 @@ namespace Assignment2
                 {
                     String path = Path.GetFullPath(saveFile1.FileName);
                     File.CreateText(path).Close();
-                    //System.IO.File.Create()
                 }
             }
 
