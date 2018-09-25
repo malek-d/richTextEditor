@@ -19,6 +19,11 @@ namespace Assignment2
             InitializeComponent();
             User = user;
             userNameLabel.Text += User.Username;
+            fontComboBox.SelectedIndex = 2;
+            fontComboBox.SelectionLength = 0;
+            richTextBox1.HideSelection = false;
+
+            
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -81,6 +86,61 @@ namespace Assignment2
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             createFile();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            int selstart = richTextBox1.SelectionStart;
+            int sellength = richTextBox1.SelectionLength;
+
+            // Set font of selected text
+            // You can use FontStyle.Bold | FontStyle.Italic to apply more than one style
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold);
+
+            // Set cursor after selected text
+            richTextBox1.SelectionStart = richTextBox1.SelectionStart + richTextBox1.SelectionLength;
+            richTextBox1.SelectionLength = 0;
+            // Set font immediately after selection
+            richTextBox1.SelectionFont = richTextBox1.Font;
+
+            // Reselect previous text
+            richTextBox1.Select(selstart, sellength);
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            int selstart = richTextBox1.SelectionStart;
+            int sellength = richTextBox1.SelectionLength;
+            // Set font of selected text
+            // You can use FontStyle.Bold | FontStyle.Italic to apply more than one style
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic);
+
+            // Set cursor after selected text
+            richTextBox1.SelectionStart = richTextBox1.SelectionStart + richTextBox1.SelectionLength;
+            richTextBox1.SelectionLength = 0;
+            // Set font immediately after selection
+            richTextBox1.SelectionFont = richTextBox1.Font;
+
+            // Reselect previous text
+            richTextBox1.Select(selstart, sellength);
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            int selstart = richTextBox1.SelectionStart;
+            int sellength = richTextBox1.SelectionLength;
+            // Set font of selected text
+            // You can use FontStyle.Bold | FontStyle.Italic to apply more than one style
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
+
+            // Set cursor after selected text
+            richTextBox1.SelectionStart = richTextBox1.SelectionStart + richTextBox1.SelectionLength;
+            richTextBox1.SelectionLength = 0;
+            // Set font immediately after selection
+            richTextBox1.SelectionFont = richTextBox1.Font;
+
+            // Reselect previous text
+            richTextBox1.Select(selstart, sellength);
         }
     }
 }

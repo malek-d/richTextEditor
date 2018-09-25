@@ -33,7 +33,7 @@ namespace Assignment2
             {
                 //Valid Sign up
                 isSuccessLbl.Text = "";
-                StreamReader reader = File.OpenText("login.txt");
+                StreamReader reader = File.OpenText("..\\..\\login.txt");
                 string line;
 
                 while ((line = reader.ReadLine()) != null)
@@ -52,12 +52,9 @@ namespace Assignment2
                 String newUser = "\n" + usernameTB.Text + "," + passwordTB.Text + "," + userTypeCb.Text + "," + firstNameTb.Text + "," +
                     lastNameTb.Text + "," + dobDPT.Value.ToString("dd-MM-yyyy");
 
-                File.AppendAllText("login.txt", newUser + Environment.NewLine);
-
-                textEditor textEditor = new textEditor(user);
-                //textEditor.User = user;
-                this.Hide();
-                textEditor.Show();
+                File.AppendAllText("..\\..\\login.txt", newUser + Environment.NewLine);
+                
+                this.DialogResult = DialogResult.OK;
             }
         }
 
@@ -90,6 +87,11 @@ namespace Assignment2
                 return false;
             }
             return true;
+        }
+
+        private void Signup_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

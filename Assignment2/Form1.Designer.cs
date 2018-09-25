@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.usernameTB = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.loginBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.passwordTB = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.usernameTB = new System.Windows.Forms.TextBox();
             this.signupBtn = new System.Windows.Forms.Button();
-            this.loginBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.isSuccessLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -66,23 +66,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
             // 
-            // usernameTB
+            // loginBtn
             // 
-            this.usernameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTB.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.usernameTB.Location = new System.Drawing.Point(6, 63);
-            this.usernameTB.Name = "usernameTB";
-            this.usernameTB.Size = new System.Drawing.Size(270, 23);
-            this.usernameTB.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Username";
+            this.loginBtn.Location = new System.Drawing.Point(75, 191);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(123, 32);
+            this.loginBtn.TabIndex = 3;
+            this.loginBtn.Text = "Login";
+            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // label3
             // 
@@ -101,6 +93,24 @@
             this.passwordTB.Size = new System.Drawing.Size(270, 23);
             this.passwordTB.TabIndex = 2;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Username";
+            // 
+            // usernameTB
+            // 
+            this.usernameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTB.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.usernameTB.Location = new System.Drawing.Point(6, 63);
+            this.usernameTB.Name = "usernameTB";
+            this.usernameTB.Size = new System.Drawing.Size(270, 23);
+            this.usernameTB.TabIndex = 0;
+            // 
             // signupBtn
             // 
             this.signupBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,16 +121,6 @@
             this.signupBtn.Text = "Sign Up";
             this.signupBtn.UseVisualStyleBackColor = true;
             this.signupBtn.Click += new System.EventHandler(this.signupBtn_Click);
-            // 
-            // loginBtn
-            // 
-            this.loginBtn.Location = new System.Drawing.Point(75, 191);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(123, 32);
-            this.loginBtn.TabIndex = 3;
-            this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = true;
-            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // exitBtn
             // 
@@ -140,6 +140,7 @@
             this.isSuccessLbl.Size = new System.Drawing.Size(283, 23);
             this.isSuccessLbl.TabIndex = 4;
             this.isSuccessLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.isSuccessLbl.Click += new System.EventHandler(this.isSuccessLbl_Click);
             // 
             // Form1
             // 
