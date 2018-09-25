@@ -64,15 +64,20 @@ namespace Assignment2
 
         private void createFile()
         {
-            using (var fbd = new FolderBrowserDialog())
+            using (var fbd = new SaveFileDialog())
             {
-                //fbd.DefaultExt = "*.rtf";
-                DialogResult result = fbd.ShowDialog();
+                SaveFileDialog saveFile1 = new SaveFileDialog();
 
-                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                // Initialize the SaveFileDialog to specify the RTF extension for the file.
+                saveFile1.DefaultExt = "*.rtf";
+                saveFile1.Filter = "RTF Files|*.rtf";
+
+                if (saveFile1.ShowDialog() == System.Windows.Forms.DialogResult.OK &&
+               saveFile1.FileName.Length > 0)
                 {
-                    String path = fbd.SelectedPath.ToString();
+                    String path = Path.GetFullPath(saveFile1.FileName);
                     File.CreateText(path).Close();
+                    //System.IO.File.Create()
                 }
             }
 
@@ -141,6 +146,28 @@ namespace Assignment2
 
             // Reselect previous text
             richTextBox1.Select(selstart, sellength);
+        }
+
+        private void fontComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int size;
+            Int32.TryParse(fontComboBox.SelectedItem.ToString(), out size);
+            richTextBox1.SelectionFont = new Font("Microsoft Sans Serif", size);
+        }
+
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Cut();
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Copy();
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Paste();
         }
     }
 }
