@@ -28,33 +28,21 @@ namespace Assignment2
         private void signupBtn_Click(object sender, EventArgs e)
         {
             //if(usernameTB && passwordTB && )
+            isSuccessLbl.Text = "";
             Boolean isComplete = validateForm();
             if (isComplete)
             {
-                //Valid Sign up
-                isSuccessLbl.Text = "";
-                StreamReader reader = File.OpenText("..\\..\\login.txt");
-                string line;
-
-                while ((line = reader.ReadLine()) != null)
-                {
-                    string[] items = line.Split(',');
-
-                    if (items[0].Equals(usernameTB.Text))
-                    {
-                        isSuccessLbl.Text = "Username already existant";
-                    }
-                }
-                reader.Close();
-
-                User user = new User(usernameTB.Text, passwordTB.Text, userTypeCb.Text, firstNameTb.Text,
+                AuthenticationHandler authentication = new AuthenticationHandler();
+                User user = authentication.Signup(usernameTB.Text, passwordTB.Text, userTypeCb.Text, firstNameTb.Text,
                     lastNameTb.Text, dobDPT.Value.ToString("dd-MM-yyyy"));
-                String newUser = "\n" + usernameTB.Text + "," + passwordTB.Text + "," + userTypeCb.Text + "," + firstNameTb.Text + "," +
-                    lastNameTb.Text + "," + dobDPT.Value.ToString("dd-MM-yyyy");
-
-                File.AppendAllText("..\\..\\login.txt", newUser + Environment.NewLine);
-                
-                this.DialogResult = DialogResult.OK;
+                if(user == null)
+                {
+                    isSuccessLbl.Text = "username already exists";
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
             }
         }
 
@@ -67,31 +55,31 @@ namespace Assignment2
             lastNameError.Visible = false;
             if (String.IsNullOrEmpty(usernameTB.Text))
             {
+                isSuccessLbl.Text = "Please fill in Username";
                 userNameError.Visible = true;
                 return false;
             } else if (String.IsNullOrEmpty(passwordTB.Text))
             {
+                isSuccessLbl.Text = "Please fill in Password";
                 passwordError.Visible = true;
                 return false;
             } else if (!passwordTB.Text.Equals(confirmPasswordTB.Text) || String.IsNullOrEmpty(confirmPasswordTB.Text))
             {
+                isSuccessLbl.Text = "Please fill in Password again";
                 password2Error.Visible = true;
                 return false;
             } else if (String.IsNullOrEmpty(firstNameTb.Text))
             {
+                isSuccessLbl.Text = "Please fill in First name";
                 firstNameError.Visible = true;
                 return false;
             } else if (String.IsNullOrEmpty(lastNameTb.Text))
             {
+                isSuccessLbl.Text = "Please fill in Last name";
                 lastNameError.Visible = true;
                 return false;
             }
             return true;
-        }
-
-        private void Signup_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

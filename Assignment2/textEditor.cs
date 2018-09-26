@@ -96,6 +96,7 @@ namespace Assignment2
                 {
                     String path = Path.GetFullPath(saveFile1.FileName);
                     File.CreateText(path).Close();
+                    richTextBox1.Text = File.ReadAllText(saveFile1.FileName);
                 }
             }
 
@@ -106,7 +107,7 @@ namespace Assignment2
             MessageBox.Show("Application name: ProEdit\n" +
                             "Version: 1.00\n" +
                             "Created by: Malek Darwiche (12580357)\n" +
-                            "Email: 12580357@student.uts.edu.au");
+                            "Email: 12580357@student.uts.edu.au", "About ProEdit", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)

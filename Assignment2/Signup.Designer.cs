@@ -303,6 +303,8 @@
             // 
             // isSuccessLbl
             // 
+            this.isSuccessLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isSuccessLbl.ForeColor = System.Drawing.Color.Red;
             this.isSuccessLbl.Location = new System.Drawing.Point(63, 39);
             this.isSuccessLbl.Name = "isSuccessLbl";
             this.isSuccessLbl.Size = new System.Drawing.Size(283, 23);
@@ -326,7 +328,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Signup";
             this.Text = "Signup";
-            this.Load += new System.EventHandler(this.Signup_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
