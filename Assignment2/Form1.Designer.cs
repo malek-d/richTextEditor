@@ -90,6 +90,7 @@
             this.passwordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTB.Location = new System.Drawing.Point(7, 135);
             this.passwordTB.Name = "passwordTB";
+            this.passwordTB.PasswordChar = '*';
             this.passwordTB.Size = new System.Drawing.Size(270, 23);
             this.passwordTB.TabIndex = 2;
             // 
@@ -145,6 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(389, 428);
             this.Controls.Add(this.isSuccessLbl);
             this.Controls.Add(this.exitBtn);

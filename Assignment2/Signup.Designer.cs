@@ -193,6 +193,7 @@
             this.confirmPasswordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPasswordTB.Location = new System.Drawing.Point(6, 186);
             this.confirmPasswordTB.Name = "confirmPasswordTB";
+            this.confirmPasswordTB.PasswordChar = '*';
             this.confirmPasswordTB.Size = new System.Drawing.Size(270, 23);
             this.confirmPasswordTB.TabIndex = 4;
             // 
@@ -210,6 +211,7 @@
             this.passwordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTB.Location = new System.Drawing.Point(6, 126);
             this.passwordTB.Name = "passwordTB";
+            this.passwordTB.PasswordChar = '*';
             this.passwordTB.Size = new System.Drawing.Size(270, 23);
             this.passwordTB.TabIndex = 2;
             // 
@@ -303,6 +305,7 @@
             // 
             // isSuccessLbl
             // 
+            this.isSuccessLbl.BackColor = System.Drawing.Color.DarkSlateGray;
             this.isSuccessLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.isSuccessLbl.ForeColor = System.Drawing.Color.Red;
             this.isSuccessLbl.Location = new System.Drawing.Point(63, 39);
@@ -315,6 +318,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(407, 613);
             this.Controls.Add(this.isSuccessLbl);
             this.Controls.Add(this.lastNameError);

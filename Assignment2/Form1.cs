@@ -36,22 +36,34 @@ namespace Assignment2
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+           isSuccessLbl.Text = "";
            AuthenticationHandler authentication = new AuthenticationHandler();
-           User loginUser = authentication.Login(usernameTB.Text, passwordTB.Text);
-           if (loginUser != null)
-           {
-               TextEditor textEditor = new TextEditor(loginUser);
-               this.Hide();
-               textEditor.Text = "ProEdit Text Editor Window";
-               textEditor.ShowDialog();
-               this.Show();
-           }
-           else
-           {
-                isSuccessLbl.Text = "User not found, please try again";
+            if (usernameTB.Text.Equals("") || passwordTB.Text.Equals(""))
+            {
+                isSuccessLbl.Text = "Please fill in all fields";
                 isSuccessLbl.ForeColor = System.Drawing.Color.Red;
                 isSuccessLbl.Font = new Font("Arial", 12, FontStyle.Regular);
-           }
+            }
+            else
+            {
+
+
+                User loginUser = authentication.Login(usernameTB.Text, passwordTB.Text);
+                if (loginUser != null)
+                {
+                    TextEditor textEditor = new TextEditor(loginUser);
+                    this.Hide();
+                    textEditor.Text = "ProEdit Text Editor Window";
+                    textEditor.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    isSuccessLbl.Text = "User not found, please try again";
+                    isSuccessLbl.ForeColor = System.Drawing.Color.Red;
+                    isSuccessLbl.Font = new Font("Arial", 12, FontStyle.Regular);
+                }
+            }
         }
     }
 }
